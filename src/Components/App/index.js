@@ -12,9 +12,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <div className="nav_container">
-          <Navbar />
-        </div>
+        <Navbar />
         <div className="main_container">
           <LandingPage />
           <HomePage />
