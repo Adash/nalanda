@@ -1,0 +1,11 @@
+.q_navbar {
+  display: flex;
+  height: 2rem;
+  background-color: gray; 
+}
+
+#q_navbar_title {
+  margin-left: 0.5rem;
+  margin-top: 0.4rem;
+  margin-right: 2rem;
+}
