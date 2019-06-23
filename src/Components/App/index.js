@@ -14,8 +14,8 @@ function App() {
       <Router>
         <Navbar />
         <div className="main_container">
-          <LandingPage />
-          <HomePage />
+          <Route exact path={ROUTES.LANDING} component={LandingPage} />
+          <Route path={ROUTES.HOME} component={HomePage} />
         </div>
       </Router>
     </div>
