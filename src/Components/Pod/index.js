@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { withFirebase } from '../Firebase';
 
 const ElementDisplay = ({elements}) => (
@@ -9,48 +9,37 @@ const ElementDisplay = ({elements}) => (
   </ul>
 )
 
-class PodBase extends Component {
-  constructor(props) {
-    super(props);
+const PodBase = (props) => {
+  const [ elements, setElements ] = useState([]);
+  const [ loading, setLoading ] = useState(false);
 
-    this.state = {
-      editMode: false,
-      editText: '',
-      elements: [],
-    }
-  }
+  useEffect(() => {
+      setLoading(true);
 
-  componentDidMount() {
-    this.setState({ loading: true });
-    this.props.firebase.elements().on('value', snapshot => {
+      const unsubscribe = props.firebase.elements().on('value', snapshot => {
       // convert messages list from snapshot
-      const elementObject = snapshot.val();
+        const elementObject = snapshot.val();
 
-      if (elementObject) {
-        const elementsList = Object.keys(elementObject).map(key => (
-            elementObject[key]
-        ))
-        this.setState({ elements: elementsList });
-        console.log(this.state.elements)
-      }
+        if (elementObject) {
+          const elementsList = Object.keys(elementObject).map(key => (
+              elementObject[key]
+          ))
+          setElements(elementsList);
+          setLoading(false);
+        }
 
-    });
-  }
-    componentWillUnmount() {
-      this.props.firebase.elements().off();
-  }
+        return () => unsubscribe();
+      });
 
-  render() {
-    const { elements } = this.state;
-    console.log(elements)
+  })
+
     return (
       <>
-        <p>hello</p>
+        <div>{loading && <p>loading</p>}</div>
         <ElementDisplay elements={ elements }/>
       </>
     )
   }
-};
 
 const Pod = withFirebase(PodBase);
 
