@@ -4,7 +4,7 @@ import { withFirebase } from '../Firebase';
 const ElementDisplay = ({elements}) => (
   <ul>
     { elements.map(element => (
-      <li>{ element.name }</li>
+      <li key={element.uid} >{ element.name }</li>
     ))}
   </ul>
 )
@@ -14,7 +14,7 @@ const PodBase = (props) => {
   const [ loading, setLoading ] = useState(false);
 
   useEffect(() => {
-      setLoading(true);
+      // setLoading(true);
 
       const unsubscribe = props.firebase.elements().on('value', snapshot => {
       // convert messages list from snapshot
@@ -31,7 +31,7 @@ const PodBase = (props) => {
         return () => unsubscribe();
       });
 
-  })
+  },[props.firebase])
 
     return (
       <>
