@@ -9,7 +9,6 @@ class Firebase {
     console.log('initialising Firebase instance');
     
     this.db = app.database();
-    console.log(this.db);
   }
 
 

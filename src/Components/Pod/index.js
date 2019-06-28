@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import { withFirebase } from '../Firebase';
 
+const ElementDisplay = ({elements}) => (
+  <ul>
+    { elements.map(element => (
+      <li>{ element.name }</li>
+    ))}
+  </ul>
+)
+
 class PodBase extends Component {
   constructor(props) {
     super(props);
@@ -8,7 +16,7 @@ class PodBase extends Component {
     this.state = {
       editMode: false,
       editText: '',
-      elements: 'nic',
+      elements: [],
     }
   }
 
@@ -16,11 +24,14 @@ class PodBase extends Component {
     this.setState({ loading: true });
     this.props.firebase.elements().on('value', snapshot => {
       // convert messages list from snapshot
-      const element = snapshot.val();
+      const elementObject = snapshot.val();
 
-      if (element) {
- 
-        this.setState({ elements: element });
+      if (elementObject) {
+        const elementsList = Object.keys(elementObject).map(key => (
+            elementObject[key]
+        ))
+        this.setState({ elements: elementsList });
+        console.log(this.state.elements)
       }
 
     });
@@ -31,10 +42,11 @@ class PodBase extends Component {
 
   render() {
     const { elements } = this.state;
+    console.log(elements)
     return (
       <>
         <p>hello</p>
-        <p>{ elements }</p>
+        <ElementDisplay elements={ elements }/>
       </>
     )
   }
