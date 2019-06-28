@@ -4,7 +4,7 @@ import EntryField from '../EntryField';
 
 import './home.css';
 
-const HomePage = () => {
+const HomePage= () => {
 
   return (
     <div className="homepage_container">
@@ -16,5 +16,6 @@ const HomePage = () => {
     </div>
   )
 }
+
 
 export default HomePage;

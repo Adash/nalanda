@@ -11,6 +11,7 @@ const Navbar = () => {
       <h2 id="q_navbar_title"> Navbar </h2>
       <Link to={ROUTES.LANDING} >Landing</Link>
       <Link to={ROUTES.HOME} >Home</Link>
+      <Link to={ROUTES.POD} >Pod</Link>
     </div>
   )
 }
