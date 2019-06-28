@@ -1,0 +1,8 @@
+.q_list_element {
+  cursor: pointer;
+  color: lightseagreen
+}
+
+.q_list_element:hover {
+  color: lightgreen;
+} 

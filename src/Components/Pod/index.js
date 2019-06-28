@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { withFirebase } from '../Firebase';
 
+import "./pod.css";
+
 const ElementDisplay = ({elements}) => (
   <ul>
     { elements.map(element => (
-      <li key={element.uid} >{ element.name }</li>
+      <li 
+        key={element.uid} 
+        className="q_list_element"
+        >{ element.name }</li>
     ))}
   </ul>
 )
