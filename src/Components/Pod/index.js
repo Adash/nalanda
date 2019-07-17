@@ -20,11 +20,9 @@ const PodBase = (props) => {
 
   useEffect(() => {
       setLoading(true);
-
       const unsubscribe = props.firebase.elements().on('value', snapshot => {
       // convert messages list from snapshot
         const elementObject = snapshot.val();
-
         if (elementObject) {
           const elementsList = Object.keys(elementObject).map(key => (
               elementObject[key]
@@ -32,10 +30,8 @@ const PodBase = (props) => {
           setElements(elementsList);
           setLoading(false);
         }
-
         return () => unsubscribe();
       });
-
   },[props.firebase])
 
     return (

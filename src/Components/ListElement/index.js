@@ -2,14 +2,16 @@ import React from 'react';
 
 import './list.css';
 
-const ListElement = (props) => {
+const ListElement = ({elements}) => {
 
   return (
     <ul>
-      <li><p>one</p></li>
-      <li><p>two</p></li>
-      <li><p>three</p></li>
-      <li><p>four</p></li>
+      { elements.map(element => (
+        <li 
+          key={element.uid} 
+          className="q_list_element"
+          >{ element.name }</li>
+        ))}
     </ul>
   )
 }
