@@ -3,6 +3,14 @@ import { withFirebase } from '../Firebase';
 
 import "./pod.css";
 
+// this whole component is just for trying things
+// the logic for fetching the data and the component 
+// for displaying the list used in the home component
+// have been developed here and copied.
+// This means that there's no unique functionality in this
+// component and it can be discarded at any time.
+
+
 const ElementDisplay = ({elements}) => (
   <ul>
     { elements.map(element => (

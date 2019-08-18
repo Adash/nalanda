@@ -1,5 +1,5 @@
 import React from 'react';
-import ListElement from '../ListElement';
+import QuoteElement from '../QuoteElement';
 import EntryField from '../EntryField';
 
 import './home.css';
@@ -10,7 +10,7 @@ const HomePage= (props) => {
     <div className="homepage_container">
       <h4>Home Page</h4>
       <div className="list_container">
-        <ListElement elements={ props.elements }/>
+        <QuoteElement elements={ props.elements }/>
         <EntryField />
       </div>
     </div>
