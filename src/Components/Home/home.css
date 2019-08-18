@@ -1,3 +1,17 @@
 .homepage_container {
-  display: grid;
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.homepage_display {
+  width: 50%;
+  background-color: lightblue;
+  height: 100%;
+}
+
+.list_container {
+  height: 100%;
+  width: 40%;
 }

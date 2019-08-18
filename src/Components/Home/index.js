@@ -8,7 +8,7 @@ const HomePage= (props) => {
 
   return (
     <div className="homepage_container">
-      <h4>Home Page</h4>
+      <div className="homepage_display" >Display</div>
       <div className="list_container">
         <QuoteElement elements={ props.elements }/>
         <EntryField />
