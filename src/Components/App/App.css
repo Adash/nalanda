@@ -16,6 +16,9 @@
 }
 
 .main_container {
+/* the 'flex: 1' below is set only on this one element out of many in the
+'page' div which lets it stretch with the available space and letting the 
+header and footer flow to the top and the bottom respectively */
   flex: 1;
   display: flex;
   justify-content: center;
