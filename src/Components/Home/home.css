@@ -1,17 +1,39 @@
 .homepage_container {
-  width: 1000px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   padding: 10px;
 }
 
 .homepage_display {
-  width: 50%;
+  width: 100%;
   background-color: lightblue;
-  height: 100%;
+  flex: 1;
 }
 
 .list_container {
-  height: 100%;
-  width: 40%;
+  width: 100%;
+  flex: 2;
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+  .homepage_container {
+    flex-direction: row;
+    width: 1000px;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+  .homepage_display {
+    flex: 1;
+    background-color: lightblue;
+    height: 50%;
+  }
+  
+  .list_container {
+    flex: 1;
+    margin-left: 3em;
+    height: 100%;
+  }
 }
