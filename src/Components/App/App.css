@@ -11,6 +11,7 @@
 .page {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .main_container {

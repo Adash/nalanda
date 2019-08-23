@@ -4,6 +4,7 @@ import { withFirebase } from '../Firebase';
 import './App.css';
 
 import Navbar from '../Navbar';
+import Footer from '../Footer';
 import LandingPage from '../Landing';
 import HomePage from '../Home';
 import Pod from '../Pod';
@@ -44,6 +45,7 @@ function AppBase(props) {
               render={(routeProps)=> 
               <HomePage {...routeProps} elements={elements} loading={loading} />} />
           </div>
+          <Footer />
         </Router>
       </div>
     </div>

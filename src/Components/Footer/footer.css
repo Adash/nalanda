@@ -1,0 +1,8 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  min-height: 4rem;
+  max-height: 5rem;
+  background-color: rgb(35, 38, 53); 
+}
