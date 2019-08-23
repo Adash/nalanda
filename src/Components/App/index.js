@@ -45,10 +45,10 @@ function AppBase(props) {
               render={(routeProps)=> 
               <HomePage {...routeProps} elements={elements} loading={loading} />} />
           </div>
+          <Footer />
         </div>
       </Router>
       
-          <Footer />
     </div>
   );
 }
