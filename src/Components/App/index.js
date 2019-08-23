@@ -33,17 +33,19 @@ function AppBase(props) {
 
   return (
     <div className="App">
-      <Router>
-        <Navbar />
-        <div className="main_container">
-          <Route exact path={ROUTES.LANDING} component={LandingPage} />
-          <Route path={ROUTES.POD} component={Pod} />
-          <Route 
-            path={ROUTES.HOME} 
-            render={(routeProps)=> 
-            <HomePage {...routeProps} elements={elements} loading={loading} />} />
-        </div>
-      </Router>
+      <div className="page">
+        <Router>
+          <Navbar />
+          <div className="main_container">
+            <Route exact path={ROUTES.LANDING} component={LandingPage} />
+            <Route path={ROUTES.POD} component={Pod} />
+            <Route 
+              path={ROUTES.HOME} 
+              render={(routeProps)=> 
+              <HomePage {...routeProps} elements={elements} loading={loading} />} />
+          </div>
+        </Router>
+      </div>
     </div>
   );
 }
