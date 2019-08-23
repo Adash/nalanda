@@ -35,8 +35,8 @@ function AppBase(props) {
   return (
     <div className="App">
       <Router>
-        <Navbar />
         <div className="page">
+          <Navbar />
           <div className="main_container">
             <Route exact path={ROUTES.LANDING} component={LandingPage} />
             <Route path={ROUTES.POD} component={Pod} />
