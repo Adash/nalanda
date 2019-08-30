@@ -8,7 +8,8 @@ const EntryField = ({handleChange, entry}) => {
       <textarea 
         name="newNote"
         onChange={ handleChange }
-      >{entry}</textarea>
+        value={entry}
+      />
     </div>
   )
 }
