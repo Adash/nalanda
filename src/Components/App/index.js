@@ -32,8 +32,8 @@ function AppBase(props) {
       });
   },[props.firebase])
 
-  const saveNote = () => {
-   console.log(" ") 
+  const saveNote = (note) => {
+   console.log("ej "+ note) 
   }
 
   return (
@@ -47,7 +47,12 @@ function AppBase(props) {
             <Route 
               path={ROUTES.HOME} 
               render={(routeProps)=> 
-              <HomePage {...routeProps} elements={elements} loading={loading} />} />
+              <HomePage 
+                {...routeProps} 
+                elements={elements} 
+                loading={loading} 
+                saveNote={saveNote}
+                />} />
           </div>
           <Footer />
         </div>

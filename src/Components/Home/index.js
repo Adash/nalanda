@@ -24,7 +24,7 @@ const HomePage= (props) => {
               handleChange={handleChange}
             />
             <button 
-              onClick={() => console.log("clicked") }
+              onClick={() => props.saveNote(entry) }
               className="btn btn-primary"
               >save</button>
           </>
