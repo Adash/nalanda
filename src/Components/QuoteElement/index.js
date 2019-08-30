@@ -30,11 +30,12 @@ const QuoteElement = ({elements, removeNote}) => {
 
   return (
     <ul>
-      { elements.map(element => (
+      { elements.map((element, index)=> (
         <li 
           key={element.uid} 
           className="q_list_element"
         >
+          { index !== 0 ? "-----------------------" : null }
           <Quote 
             element={element} 
             removeNote={removeNote}
