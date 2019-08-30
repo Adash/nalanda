@@ -16,6 +16,10 @@
   flex: 2;
 }
 
+.loading {
+  color: #265b6d;
+}
+
 /* Desktop Styles */
 @media only screen and (min-width: 961px) {
   .homepage_container {
@@ -27,7 +31,7 @@
   
   .homepage_display {
     flex: 1;
-    background-color: lightblue;
+    background-color: #F6F7F8;
     height: 50%;
   }
   

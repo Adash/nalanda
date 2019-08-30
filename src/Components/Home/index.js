@@ -10,8 +10,16 @@ const HomePage= (props) => {
     <div className="homepage_container">
       <div className="homepage_display" >Display</div>
       <div className="list_container">
-        <QuoteElement elements={ props.elements }/>
-        <EntryField />
+        {!props.loading ?
+          (
+          <>
+            <QuoteElement elements={ props.elements }/>
+            <EntryField />
+          </>
+          )
+          : ( <h4 className="loading">Loading...</h4>)
+        }
+        
       </div>
     </div>
   )
