@@ -13,8 +13,21 @@ const HomePage= (props) => {
 
   return (
     <div className="homepage_container">
-      <div className="homepage_display" >Display</div>
-      <div className="list_container">
+      <div className="display_container" >
+        <div className="display"><div>Display</div></div> 
+        <div className="entryfield_container" > 
+          <EntryField 
+            entry={entry}
+            handleChange={handleChange}
+          />
+          <button 
+            onClick={() => props.saveNote(entry) }
+            className="save-button"
+            >save
+          </button>
+        </div>
+      </div>
+      <div className="entry_container">
         {!props.loading ?
           (
           <>
@@ -22,14 +35,7 @@ const HomePage= (props) => {
               elements={ props.elements }
               removeNote={ props.removeNote}
             />
-            <EntryField 
-              entry={entry}
-              handleChange={handleChange}
-            />
-            <button 
-              onClick={() => props.saveNote(entry) }
-              className="save-button"
-              >save</button>
+
           </>
           )
           : ( <h4 className="loading">Loading...</h4>)

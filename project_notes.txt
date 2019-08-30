@@ -1,0 +1,8 @@
+to do:
+- some functionality for display, for exaple switching between different 
+  collections of notes.
+- page for displaying nots without the entry field
+- authentication and authorisation
+  - authentication and authorisation implementation
+  - displaying notes belonging to the authenticated user
+  - logout

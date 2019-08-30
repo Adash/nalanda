@@ -44,6 +44,6 @@ header and footer flow to the top and the bottom respectively */
 /* Desktop Styles */
 @media only screen and (min-width: 961px) {
   body {
-    background-color: #EAEDF0; /* Blue */
+    background-color: #EAEDF0; 
   }
 }
