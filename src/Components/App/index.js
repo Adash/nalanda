@@ -44,6 +44,10 @@ function AppBase(props) {
    props.firebase.elements().push(newNote);
   }
 
+  const removeNote = (uid) => {
+    props.firebase.element(uid).remove();
+  }
+
   return (
     <div className="App">
       <Router>
@@ -60,6 +64,7 @@ function AppBase(props) {
                 elements={elements} 
                 loading={loading} 
                 saveNote={saveNote}
+                removeNote={removeNote}
                 />} />
           </div>
           <Footer />

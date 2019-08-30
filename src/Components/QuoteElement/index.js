@@ -2,7 +2,7 @@ import React from 'react';
 
 import './list.css';
 
-const QuoteElement = ({elements}) => {
+const QuoteElement = ({elements, removeNote}) => {
 
   return (
     <ul>
@@ -13,7 +13,10 @@ const QuoteElement = ({elements}) => {
         >
           <h4>{ element.author }</h4>
           <p>{ element.text }</p>
-          {/* <button className="remove-button">remove</button> */}
+          <button 
+            className="remove-button"
+            onClick={() => removeNote(element.uid)}
+          >remove</button>
         </li>
         ))}
     </ul>

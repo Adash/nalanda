@@ -18,7 +18,10 @@ const HomePage= (props) => {
         {!props.loading ?
           (
           <>
-            <QuoteElement elements={ props.elements }/>
+            <QuoteElement 
+              elements={ props.elements }
+              removeNote={ props.removeNote}
+            />
             <EntryField 
               entry={entry}
               handleChange={handleChange}
