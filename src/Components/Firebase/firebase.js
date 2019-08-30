@@ -13,6 +13,7 @@ class Firebase {
 
 
   elements = () => this.db.ref('elements');
+  element = (uid) => this.db.ref(`elements/${uid}`);
 
 }
 

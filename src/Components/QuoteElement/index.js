@@ -13,6 +13,7 @@ const QuoteElement = ({elements}) => {
         >
           <h4>{ element.author }</h4>
           <p>{ element.text }</p>
+          {/* <button className="remove-button">remove</button> */}
         </li>
         ))}
     </ul>
