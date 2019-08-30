@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import './list.css';
+import './quoteElement.css';
 
 const Quote = ({element, removeNote}) => {
   const [showButtons, setShowButtons] = useState("none");

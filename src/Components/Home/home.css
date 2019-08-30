@@ -20,6 +20,12 @@
   color: #265b6d;
 }
 
+.save-button {
+  background-color: rgba(0,136,169,1);
+  border: none;
+  border-radius: 50px;
+}
+
 /* Desktop Styles */
 @media only screen and (min-width: 961px) {
   .homepage_container {

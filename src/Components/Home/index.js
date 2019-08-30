@@ -28,7 +28,7 @@ const HomePage= (props) => {
             />
             <button 
               onClick={() => props.saveNote(entry) }
-              className="btn btn-primary"
+              className="save-button"
               >save</button>
           </>
           )

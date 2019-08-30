@@ -5,12 +5,10 @@ import './entryfield.css';
 const EntryField = ({handleChange, entry}) => {
   return (
     <div className="entryfield">
-      <input 
-        type="text"
-        value={ entry }
+      <textarea 
+        name="newNote"
         onChange={ handleChange }
-        placeholder="Enter note"
-      />
+      >{entry}</textarea>
     </div>
   )
 }
