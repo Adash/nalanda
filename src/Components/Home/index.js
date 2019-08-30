@@ -1,10 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import QuoteElement from '../QuoteElement';
 import EntryField from '../EntryField';
 
 import './home.css';
 
 const HomePage= (props) => {
+  const [ entry, setEntry ] = useState('');
+
+  function handleChange(e) {
+    setEntry( e.target.value )
+  }
 
   return (
     <div className="homepage_container">
@@ -14,7 +19,14 @@ const HomePage= (props) => {
           (
           <>
             <QuoteElement elements={ props.elements }/>
-            <EntryField />
+            <EntryField 
+              entry={entry}
+              handleChange={handleChange}
+            />
+            <button 
+              onClick={() => console.log("clicked") }
+              className="btn btn-primary"
+              >save</button>
           </>
           )
           : ( <h4 className="loading">Loading...</h4>)

@@ -2,13 +2,7 @@ import React, { useState } from 'react';
 
 import './entryfield.css';
 
-const EntryField = () => {
-  const [ entry, setEntry ] = useState('');
-
-  function handleChange(e) {
-    setEntry( e.target.value )
-  }
-
+const EntryField = ({handleChange, entry}) => {
   return (
     <div className="entryfield">
       <input 

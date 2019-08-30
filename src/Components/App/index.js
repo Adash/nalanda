@@ -32,6 +32,10 @@ function AppBase(props) {
       });
   },[props.firebase])
 
+  const saveNote = () => {
+   console.log(" ") 
+  }
+
   return (
     <div className="App">
       <Router>
