@@ -14,7 +14,8 @@ h2 {
 
 .q_navbar {
   display: flex;
-  height: 4rem;
+  height: 2rem;
+  min-height: 2rem;
   justify-content: space-between;
   align-items: center;
   background-color: #24252A; 
@@ -38,7 +39,7 @@ h2 {
   color: #0088a9
 }
 
-button {
+.q_navbar button {
   padding: 4px 15px;
   background-color: rgba(0,136,169,1);
   border: none;
@@ -56,10 +57,9 @@ button:hover {
 
   .q_navbar {
     display: flex;
-    height: 3rem;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 5px 0px 5px;
+    padding: 4px 5px 4px 5px;
   }
 
   .nav_links {
@@ -70,9 +70,9 @@ button:hover {
     padding: 0px 20px;
   }
 
-  button {
+  /* .q_navbar button {
     padding: 9px 25px;
-  }
+  } */
 
 
 }
