@@ -1,8 +1,33 @@
+.pod_container {
+  display: flex;
+
+  padding: 10px;
+}
+
 .q_list_element {
   cursor: pointer;
-  color: lightseagreen
+  color: rgb(2, 170, 162)
 }
 
 .q_list_element:hover {
   color: lightgreen;
 } 
+
+.quote_text {
+  text-align: left;
+}
+
+.quote_author {
+  color: rgb(74, 163, 159);
+}
+
+/* .element_display {
+
+} */
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+  .element_display {
+    width: 300px;
+  }
+}

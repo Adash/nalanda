@@ -3,7 +3,7 @@ import { withFirebase } from '../Firebase';
 
 import "./pod.css";
 
-// this whole component is just for trying things
+// this whole component is just for trying things,
 // the logic for fetching the data and the component 
 // for displaying the list used in the home component
 // have been developed here and copied.
@@ -12,14 +12,18 @@ import "./pod.css";
 
 
 const ElementDisplay = ({elements}) => (
-  <ul>
+  <div className="element_display">
     { elements.map(element => (
-      <li 
+      <div 
         key={element.uid} 
         className="q_list_element"
-        >{ element.name }</li>
+      >
+        <p className="quote_text" >{ element.text }</p>
+        <p className="quote_author" >{ element.author }</p> 
+        <br/>     
+      </div>
     ))}
-  </ul>
+  </div>
 )
 
 const PodBase = (props) => {
@@ -43,10 +47,10 @@ const PodBase = (props) => {
   },[props.firebase])
 
     return (
-      <>
+      <div className="pod_container">
         <div>{loading && <p>loading</p>}</div>
         <ElementDisplay elements={ elements }/>
-      </>
+      </div>
     )
   }
 
