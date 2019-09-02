@@ -30,9 +30,9 @@ const QuoteElement = ({elements, removeNote}) => {
   
 
   return (
-    <ul>
+    <div>
       { elements.map((element, index)=> (
-        <li 
+        <div 
           key={element.uid} 
           className="q_list_element"
         >
@@ -41,9 +41,9 @@ const QuoteElement = ({elements, removeNote}) => {
             element={element} 
             removeNote={removeNote}
           />
-        </li>
+        </div>
         ))}
-    </ul>
+    </div>
   )
 }
 export default QuoteElement
