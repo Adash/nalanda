@@ -13,6 +13,7 @@ const Quote = ({element, removeNote}) => {
     <>
       <h4>{ element.author }</h4>
       <p
+        className="quote"
         onClick={() => toggleButtons()}
       >{ element.text }</p>
       <button 

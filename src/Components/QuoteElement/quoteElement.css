@@ -11,6 +11,10 @@
   background-color: rgb(100, 8, 8);
 }
 
+.quote {
+  text-align: left;
+}
+
 @media only screen and (min-width: 961px) {
   .remove-button {
     cursor: pointer;
