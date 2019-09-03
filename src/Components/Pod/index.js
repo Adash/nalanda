@@ -3,6 +3,7 @@ import { withFirebase } from '../Firebase';
 
 import "./pod.css";
 
+
 const ElementDisplay = ({elements}) => (
   <div className="element_display">
     { elements.map(element => (
