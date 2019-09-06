@@ -14,7 +14,9 @@ const Navbar = () => {
         <Link to={ROUTES.HOME} >Home</Link>
         <Link to={ROUTES.POD} >Pod</Link>
       </div>
-      <a className="cta" href="/#"><button>Sign In</button></a>
+      <button className="lnk">
+        <Link  to={ROUTES.SIGNIN}>Sign In</Link>
+      </button>
     </div>
   )
 }

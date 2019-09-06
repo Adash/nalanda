@@ -27,7 +27,6 @@ class SignInFormBase extends Component {
     const { email, password } = this.state
 
     event.preventDefault()
-    console.log(this.state)
 
     this.props.firebase.fbSignIn(email, password)
       .then(() => {

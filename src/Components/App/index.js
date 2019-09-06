@@ -1,37 +1,38 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { withFirebase } from '../Firebase';
-import './App.css';
+import React, { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { withFirebase } from '../Firebase'
+import './App.css'
 
-import Navbar from '../Navbar';
-import Footer from '../Footer';
-import LandingPage from '../Landing';
-import HomePage from '../Home';
-import Pod from '../Pod';
+import Navbar from '../Navbar'
+import Footer from '../Footer'
+import LandingPage from '../Landing'
+import HomePage from '../Home'
+import Pod from '../Pod'
+import SignIn from '../SignIn'
 
-import * as ROUTES from '../../Constants/routes';
+import * as ROUTES from '../../Constants/routes'
 
 function AppBase(props) {
 
-  const [ elements, setElements ] = useState([]);
-  const [ loading, setLoading ] = useState(false);
+  const [ elements, setElements ] = useState([])
+  const [ loading, setLoading ] = useState(false)
 
   useEffect(() => {
-      setLoading(true);
+      setLoading(true)
       const unsubscribe = props.firebase.elements().on('value', snapshot => {
       // convert messages list from snapshot
-        const elementObject = snapshot.val();
+        const elementObject = snapshot.val()
         if (elementObject) {
           const elementsList = Object.keys(elementObject).map(key => ({
               ...elementObject[key],
               uid: key,
             }
           ))
-          setElements(elementsList);
-          setLoading(false);
+          setElements(elementsList)
+          setLoading(false)
         }
-        return () => unsubscribe();
-      });
+        return () => unsubscribe()
+      })
   },[props.firebase])
 
   const saveNote = (note) => {
@@ -45,7 +46,7 @@ function AppBase(props) {
   }
 
   const removeNote = (uid) => {
-    props.firebase.element(uid).remove();
+    props.firebase.element(uid).remove()
   }
 
   return (
@@ -66,6 +67,7 @@ function AppBase(props) {
                 saveNote={saveNote}
                 removeNote={removeNote}
                 />} />
+              <Route path={ROUTES.SIGNIN} component={SignIn}/>
           </div>
           <Footer />
         </div>
@@ -75,6 +77,6 @@ function AppBase(props) {
   );
 }
 
-const App = withFirebase(AppBase);
+const App = withFirebase(AppBase)
 
-export default App;
+export default App
