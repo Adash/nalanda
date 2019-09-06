@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { withFirebase } from '../Firebase'
+import { withAuthentication } from '../Session'
+
 import './App.css'
 
 import Navbar from '../Navbar'
@@ -79,4 +81,4 @@ function AppBase(props) {
 
 const App = withFirebase(AppBase)
 
-export default App
+export default withAuthentication(App)
