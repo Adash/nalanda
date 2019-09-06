@@ -1,10 +1,14 @@
-import React from 'react';
+import React from 'react'
+import SignIn from '../SignIn'
 
 const LandingPage = () => {
 
   return (
-    <h4>Landing Page</h4>
+    <div>
+      <h4>Landing Page</h4>
+      <SignIn/>
+    </div>
   )
 }
 
-export default LandingPage;
+export default LandingPage
