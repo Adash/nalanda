@@ -1,11 +1,12 @@
-import React, {useState} from 'react';
-import QuoteElement from '../QuoteElement';
-import EntryField from '../EntryField';
+import React, {useState} from 'react'
+import { Redirect } from 'react-router-dom'
+import QuoteElement from '../QuoteElement'
+import EntryField from '../EntryField'
 
 import './home.css';
 
 const HomePage= (props) => {
-  const [ entry, setEntry ] = useState('');
+  const [ entry, setEntry ] = useState('')
 
   function handleChange(e) {
     setEntry( e.target.value )

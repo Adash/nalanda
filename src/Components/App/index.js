@@ -11,6 +11,7 @@ import LandingPage from '../Landing'
 import HomePage from '../Home'
 import Pod from '../Pod'
 import SignIn from '../SignIn'
+import { ProtectedRoute } from '../Session'
 
 import * as ROUTES from '../../Constants/routes'
 
@@ -53,28 +54,27 @@ function AppBase(props) {
 
   return (
     <div className="App">
-      <Router>
-        <div className="page">
-          <Navbar />
-          <div className="main_container">
-            <Route exact path={ROUTES.LANDING} component={LandingPage} />
-            <Route path={ROUTES.POD} component={Pod} />
-            <Route 
-              path={ROUTES.HOME} 
-              render={(routeProps)=> 
-              <HomePage 
-                {...routeProps} 
-                elements={elements} 
-                loading={loading} 
-                saveNote={saveNote}
-                removeNote={removeNote}
-                />} />
-              <Route path={ROUTES.SIGNIN} component={SignIn}/>
+        <Router>
+          <div className="page">
+            <Navbar />
+            <div className="main_container">
+              <Route exact path={ROUTES.LANDING} component={LandingPage} />
+              <ProtectedRoute path={ROUTES.POD} component={Pod} user={true}/>
+              <Route 
+                path={ROUTES.HOME} 
+                render={(routeProps)=> 
+                <HomePage 
+                  {...routeProps} 
+                  elements={elements} 
+                  loading={loading} 
+                  saveNote={saveNote}
+                  removeNote={removeNote}
+                  />} />
+                <Route path={ROUTES.SIGNIN} component={SignIn}/>
+            </div>
+            <Footer />
           </div>
-          <Footer />
-        </div>
-      </Router>
-      
+        </Router>
     </div>
   );
 }

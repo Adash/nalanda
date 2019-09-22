@@ -1,8 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import * as ROUTES from '../../Constants/routes';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-import './navbar.css';
+import SignOut from '../SignOut'
+
+import * as ROUTES from '../../Constants/routes'
+
+import './navbar.css'
 
 const Navbar = () => {
 
@@ -14,8 +17,9 @@ const Navbar = () => {
         <Link to={ROUTES.HOME} >Home</Link>
         <Link to={ROUTES.POD} >Pod</Link>
       </div>
+      <SignOut/>
       <button className="lnk">
-        <Link  to={ROUTES.SIGNIN}>Sign In</Link>
+        <Link to={ROUTES.SIGNIN}>Sign In</Link>
       </button>
     </div>
   )

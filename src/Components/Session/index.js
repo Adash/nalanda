@@ -1,4 +1,5 @@
 import AuthUserContext from './context'
 import withAuthentication from './withAuthentication'
+import ProtectedRoute from './ProtectedRoute'
 
-export { AuthUserContext, withAuthentication }
+export { AuthUserContext, withAuthentication, ProtectedRoute }
