@@ -1,6 +1,5 @@
 import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
-import { AuthUserContext } from '../Session'
 
 import * as ROUTES from '../../Constants/routes'
 

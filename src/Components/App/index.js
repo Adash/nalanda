@@ -58,8 +58,9 @@ function AppBase(props) {
           <div className="page">
             <Navbar />
             <div className="main_container">
+              {/* <button onClick={ () => console.log(props.user) }>test</button> */}
               <Route exact path={ROUTES.LANDING} component={LandingPage} />
-              <ProtectedRoute path={ROUTES.POD} component={Pod} user={true}/>
+              <ProtectedRoute path={ROUTES.POD} component={Pod} user={props.user}/>
               <Route 
                 path={ROUTES.HOME} 
                 render={(routeProps)=> 
