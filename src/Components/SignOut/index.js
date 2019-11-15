@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { withFirebase } from '../Firebase'
-import { withAuthentication } from '../Session'
 
 const SignOutButtonBase = ({ user, firebase }) => {
   const signOut = () => {
@@ -9,18 +8,14 @@ const SignOutButtonBase = ({ user, firebase }) => {
   }
 
   return (
-    <>
-      {!user ? null : (
-        <button className="lnk">
-          <Link to="#" onClick={signOut}>
-            Sign Out
-          </Link>
-        </button>
-      )}
-    </>
+    <button className="lnk">
+      <Link to="#" onClick={signOut}>
+        Sign Out
+      </Link>
+    </button>
   )
 }
 
 const SignOutButton = withFirebase(SignOutButtonBase)
 
-export default withAuthentication(SignOutButton)
+export default SignOutButton
