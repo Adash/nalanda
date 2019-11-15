@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import QuoteElement from '../QuoteElement'
+import QuotesList from '../QuotesList'
 import EntryField from '../EntryField'
 
 import './home.css'
@@ -40,7 +40,7 @@ const HomePage = props => {
       <div className="entry_container">
         {!props.loading ? (
           <>
-            <QuoteElement
+            <QuotesList
               elements={props.elements}
               removeNote={props.removeNote}
             />

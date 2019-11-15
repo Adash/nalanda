@@ -51,7 +51,7 @@ function AppBase(props) {
   }
 
   return (
-    <div className="App">
+    <div className="App app-container">
       <Router>
         <div className="page">
           <Navbar />

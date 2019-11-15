@@ -14,7 +14,7 @@
 }
 
 .display {
-  background-color: rgb(246, 249, 253); 
+  background-color: rgb(246, 249, 253);
   height: 50px;
   display: flex;
   align-items: center;
@@ -31,7 +31,7 @@
 }
 
 .save-button {
-  background-color: rgba(0,136,169,1);
+  background-color: rgba(0, 136, 169, 1);
   border: none;
   border-radius: 50px;
 }
@@ -44,13 +44,12 @@
     justify-content: space-between;
     padding: 10px;
   }
-  
+
   .homepage_display {
     flex: 1;
-    background-color: #F6F7F8;
-
+    background-color: #f6f7f8;
   }
-  
+
   .entry_container {
     flex: 1;
     margin-left: 3em;

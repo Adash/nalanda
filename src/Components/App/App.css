@@ -16,7 +16,7 @@
 }
 
 .main_container {
-/* the 'flex: 1' below is set only on this one element out of many in the
+  /* the 'flex: 1' below is set only on this one element out of many in the
 'page' div which lets it stretch with the available space and letting the 
 header and footer flow to the top and the bottom respectively */
   flex: 1;
@@ -24,26 +24,26 @@ header and footer flow to the top and the bottom respectively */
   justify-content: center;
 }
 
-
-
-
 /* Mobile Styles */
 @media only screen and (max-width: 400px) {
   body {
-    background-color: #F09A9D; /* Red */
+    background-color: #f09a9d; /* Red */
   }
 }
 
 /* Tablet Styles */
 @media only screen and (min-width: 401px) and (max-width: 960px) {
   body {
-    background-color: #F5CF8E; /* Yellow */
+    background-color: #f5cf8e; /* Yellow */
   }
 }
 
 /* Desktop Styles */
 @media only screen and (min-width: 961px) {
   body {
-    background-color: #EAEDF0; 
+    background-color: #eaedf0;
+  }
+  .app-container {
+    max-height: 100vh;
   }
 }
