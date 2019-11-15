@@ -63,9 +63,10 @@ function AppBase(props) {
               component={Pod}
               user={props.user}
             />
-            <Route
+            <ProtectedRoute
               path={ROUTES.HOME}
-              render={routeProps => (
+              user={props.user}
+              component={routeProps => (
                 <HomePage
                   {...routeProps}
                   elements={elements}
