@@ -1,17 +1,34 @@
-import React from 'react';
+import React from 'react'
 
-import './entryfield.css';
+import './entryfield.css'
 
-const EntryField = ({handleChange, entry}) => {
+const EntryField = ({
+  handleEntryChange,
+  handleTitleChange,
+  entry,
+  entryTitle
+}) => {
   return (
-    <div className="entryfield">
-      <textarea 
-        name="newNote"
-        onChange={ handleChange }
-        value={entry}
-      />
+    <div className="entryfield-wrapper">
+      <div className="entryfield-title">
+        <input
+          type="text"
+          name="newNoteTitle"
+          className="entryTitle"
+          onChange={handleTitleChange}
+          value={entryTitle}
+        />
+      </div>
+      <div className="entryfield">
+        <textarea
+          name="newNote"
+          className="newEntry"
+          onChange={handleEntryChange}
+          value={entry}
+        />
+      </div>
     </div>
   )
 }
 
-export default EntryField;
+export default EntryField

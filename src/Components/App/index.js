@@ -36,11 +36,11 @@ function AppBase(props) {
     })
   }, [props.firebase])
 
-  const saveNote = note => {
-    console.log('ej ' + note)
+  const saveNote = (entry, entryTitle) => {
+    console.log('ej ' + entry)
     const newNote = {
-      author: 'iots',
-      text: note,
+      author: entryTitle ? entryTitle : 'iots',
+      text: entry,
       auid: 'iots108-temporary-auid'
     }
     props.firebase.elements().push(newNote)
