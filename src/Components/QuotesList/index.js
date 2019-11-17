@@ -10,11 +10,9 @@ const Quote = ({ element, removeNote }) => {
   }
 
   return (
-    <>
+    <div onClick={() => toggleButtons()}>
       <h4>{element.author}</h4>
-      <p className="quote" onClick={() => toggleButtons()}>
-        {element.text}
-      </p>
+      <p className="quote">{element.text}</p>
       <button
         style={{ display: showButtons }}
         className="remove-button"
@@ -22,7 +20,7 @@ const Quote = ({ element, removeNote }) => {
       >
         remove
       </button>
-    </>
+    </div>
   )
 }
 
@@ -31,7 +29,7 @@ const QuotesList = ({ elements, removeNote }) => {
     <div className="quote-list-area">
       {elements.map((element, index) => (
         <div key={element.uid} className="q_list_element">
-          {index !== 0 ? '-----------------------' : null}
+          {index !== 0 ? <br /> : null}
           <Quote element={element} removeNote={removeNote} />
         </div>
       ))}
