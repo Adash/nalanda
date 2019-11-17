@@ -22,14 +22,13 @@ const Quote = ({ element, remover }) => {
   )
 }
 
-const renderQuotes = (element, index, remover) => (
-  <div key={element.uid} className="q_list_element">
-    {index !== 0 ? <br /> : null}
-    <Quote element={element} remover={remover} />
-  </div>
-)
-
 const QuotesList = ({ elements, remover }) => {
+  const renderQuotes = (element, index, remover) => (
+    <div key={element.uid} className="q_list_element">
+      {index !== 0 ? <br /> : null}
+      <Quote element={element} remover={remover} />
+    </div>
+  )
   return (
     <div className="quote-list-area">
       {elements.map((element, index) => renderQuotes(element, index, remover))}
