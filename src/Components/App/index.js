@@ -46,7 +46,7 @@ function AppBase(props) {
     props.firebase.elements().push(newNote)
   }
 
-  const removeNote = uid => {
+  const remover = uid => {
     props.firebase.element(uid).remove()
   }
 
@@ -72,7 +72,7 @@ function AppBase(props) {
                   elements={elements}
                   loading={loading}
                   saveNote={saveNote}
-                  removeNote={removeNote}
+                  remover={remover}
                 />
               )}
             />

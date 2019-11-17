@@ -40,10 +40,7 @@ const HomePage = props => {
       <div className="entry_container">
         {!props.loading ? (
           <>
-            <QuotesList
-              elements={props.elements}
-              removeNote={props.removeNote}
-            />
+            <QuotesList elements={props.elements} remover={props.remover} />
           </>
         ) : (
           <h4 className="loading">Loading...</h4>

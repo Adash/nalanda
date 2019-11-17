@@ -2,13 +2,11 @@ import React, { useState } from 'react'
 
 import './quoteElement.css'
 
-const Quote = ({ element, removeNote }) => {
+const Quote = ({ element, remover }) => {
   const [showButtons, setShowButtons] = useState('none')
-
   const toggleButtons = () => {
     setShowButtons(showButtons === 'none' ? '' : 'none')
   }
-
   return (
     <div onClick={() => toggleButtons()}>
       <h4>{element.author}</h4>
@@ -16,7 +14,7 @@ const Quote = ({ element, removeNote }) => {
       <button
         style={{ display: showButtons }}
         className="remove-button"
-        onClick={() => removeNote(element.uid)}
+        onClick={() => remover(element.uid)}
       >
         remove
       </button>
@@ -24,15 +22,17 @@ const Quote = ({ element, removeNote }) => {
   )
 }
 
-const QuotesList = ({ elements, removeNote }) => {
+const renderQuotes = (element, index, remover) => (
+  <div key={element.uid} className="q_list_element">
+    {index !== 0 ? <br /> : null}
+    <Quote element={element} remover={remover} />
+  </div>
+)
+
+const QuotesList = ({ elements, remover }) => {
   return (
     <div className="quote-list-area">
-      {elements.map((element, index) => (
-        <div key={element.uid} className="q_list_element">
-          {index !== 0 ? <br /> : null}
-          <Quote element={element} removeNote={removeNote} />
-        </div>
-      ))}
+      {elements.map((element, index) => renderQuotes(element, index, remover))}
     </div>
   )
 }
