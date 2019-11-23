@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { withFirebase } from '../Firebase'
 import { withAuthentication } from '../Session'
 
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 
 import Navbar from '../Navbar'

@@ -22,6 +22,7 @@ header and footer flow to the top and the bottom respectively */
   flex: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 /* Mobile Styles */

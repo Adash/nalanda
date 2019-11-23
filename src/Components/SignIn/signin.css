@@ -1,1 +1,18 @@
+/* Mobile Styles */
+.container_form {
+  display: flex;
+  flex-direction: column;
+}
 
+.signin_form_button {
+  padding: 0px 14px 0px 14px;
+  border-radius: 0.5px;
+  margin: 1px 0px 1px 0px;
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+  .container_form {
+    flex-direction: row;
+  }
+}

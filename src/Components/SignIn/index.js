@@ -9,7 +9,7 @@ import './signin.css'
 const INITIAL_STATE = {
   email: '',
   password: '',
-  error: null,
+  error: null
 }
 
 class SignInFormBase extends Component {
@@ -19,16 +19,17 @@ class SignInFormBase extends Component {
     this.state = { ...INITIAL_STATE }
   }
 
-  onChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value, })
+  onChange = event => {
+    this.setState({ [event.target.name]: event.target.value })
   }
 
-  onSubmit = (event) => {
+  onSubmit = event => {
     const { email, password } = this.state
 
     event.preventDefault()
 
-    this.props.firebase.fbSignIn(email, password)
+    this.props.firebase
+      .fbSignIn(email, password)
       .then(() => {
         this.setState({ ...INITIAL_STATE })
         this.props.history.push(ROUTES.HOME)
@@ -36,40 +37,39 @@ class SignInFormBase extends Component {
       .catch(error => {
         this.setState({ error })
       })
-
   }
 
-  render () {
+  render() {
     const { email, password, error } = this.state
     const isInvalid = password === '' || email === ''
 
     return (
-      <form onSubmit={ this.onSubmit } >
-        <input 
+      <form className="container_form" onSubmit={this.onSubmit}>
+        <input
           name="email"
-          value={ email }
-          onChange={ this.onChange }
+          value={email}
+          onChange={this.onChange}
           type="email"
           placeholder="email"
           className="q_input"
         />
-        <input 
+        <input
           name="password"
-          value={ password }
-          onChange={ this.onChange }
+          value={password}
+          onChange={this.onChange}
           type="password"
           placeholder="password"
           className="q_input"
         />
-        <button 
-          disabled={ isInvalid }
+        <button
+          disabled={isInvalid}
           type="submit"
-          className="btn btn-primary"
+          className="btn btn-primary signin_form_button"
           id="main_button"
         >
           Log In
         </button>
-        <br/>
+        <br />
         {/* <Link 
           to={ROUTES.PASSWORD_FORGET}
           id="reset_link"
@@ -78,15 +78,12 @@ class SignInFormBase extends Component {
           to={ROUTES.SIGN_UP}
           id="signup_link"
         >Sign Up</Link> */}
-        { error && <p>{error.message}</p> }
+        {error && <p>{error.message}</p>}
       </form>
     )
   }
 }
 
-const SignInForm = compose(
-  withRouter,
-  withFirebase,
-)(SignInFormBase)
+const SignInForm = compose(withRouter, withFirebase)(SignInFormBase)
 
 export default SignInForm
