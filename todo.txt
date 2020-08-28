@@ -1,0 +1,2 @@
+* consolidate the style of the app so the functional part is in line with the MainHall section
+* Add some functionality to the buttons on the MainHall page

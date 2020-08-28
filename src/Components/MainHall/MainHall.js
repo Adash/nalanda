@@ -2,34 +2,6 @@ import React from 'react'
 import './MainHall.css'
 import styled from 'styled-components'
 
-const TILOPA01 = {
-  text: `If you are beyond all grasping at an object and at a subject,
-  that is the monarch of all views.
-  If there is no distraction,
-  it is the monarch of all meditations.
-  If there is no effort,
-  it is the monarch among all conducts.
-  When there is no hope and no fear,
-  that is the final result,
-  and the fruition has been attained or revealed. `,
-  author: `Tilopa`,
-}
-
-const TRUNGPA01 = {
-  text: `So let the phenomena play. Let the phenomena make fools of themselves by themselves. This is the approach.`,
-  author: `Chogyam Trungpa`,
-}
-
-const TILOPA02 = {
-  text: `Meditation is one of the rare occasions when we’re not doing anything. Otherwise, we’re always doing something, we’re always thinking something, we’re always occupied. We get lost in millions of obsessions and fixations. But by meditating – by not doing anything – all these fixations are revealed and our obsessions will naturally undo themselves like a snake uncoiling itself.`,
-  author: `Tilopa`,
-}
-
-const NORBU01 = {
-  text: `Enlightenment, or Nirvana, is nothing other than the state beyond all obstacles, in the same way that from the peak of a very high mountain one always sees the sun. Nirvana is not a paradise or some special place of happiness, but is in fact the condition beyond all dualistic concepts, including those of happiness and suffering. When all our obstacles have been overcome, and we find ourselves in a state of total presence, the wisdom of enlightenment manifests spontaneously without limits, just like the infinite rays of the sun. The clouds have dissolved, and the sun is finally free to shine once again.`,
-  author: `Namhkai Norbu Rinpoche`,
-}
-
 const StyledApp = styled.div`
   /* position: fixed; */
   width: 100vw;
@@ -239,10 +211,6 @@ const ContentScreen = ({ elements }) => {
         {elements.map((element, index) => (
           <Card key={index} text={element.text} author={element.author} />
         ))}
-        {/* <Card text={TILOPA01.text} author={TILOPA01.author} />
-        <Card text={TRUNGPA01.text} author={TRUNGPA01.author} />
-        <Card text={TILOPA02.text} author={TILOPA02.author} />
-        <Card text={NORBU01.text} author={NORBU01.author} /> */}
       </ContentScrollContainer>
     </StyledContentScreen>
   )
