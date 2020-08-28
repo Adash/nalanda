@@ -12,9 +12,9 @@ const Navbar = ({ user }) => {
       {user ? (
         <>
           <div className="nav_links">
-            <Link to={ROUTES.LANDING}>Landing</Link>
+            <Link to={ROUTES.LANDING}>Land</Link>
             <Link to={ROUTES.HOME}>Home</Link>
-            <Link to={ROUTES.POD}>Pod</Link>
+            <Link to={ROUTES.MAINHALL}>Main</Link>
           </div>
           <SignOut />
         </>

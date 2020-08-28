@@ -1,0 +1,9 @@
+html {
+  --color-core: #68b0ab;
+  --color-light: #8fc0a9;
+  --color-lighter: #c8d5b9;
+  --color-lightest: #faf3dd;
+  --color-dark: #696d7d;
+  --color-offwhite: #fcf9ed;
+  --color-offblack: #25272c;
+}

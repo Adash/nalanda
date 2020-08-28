@@ -11,6 +11,7 @@ import Footer from '../Footer'
 import LandingPage from '../Landing'
 import HomePage from '../Home'
 import Pod from '../Pod'
+import MainHall from '../MainHall/MainHall'
 import SignIn from '../SignIn'
 import { ProtectedRoute } from '../Session'
 
@@ -22,13 +23,13 @@ function AppBase(props) {
 
   useEffect(() => {
     setLoading(true)
-    const unsubscribe = props.firebase.elements().on('value', snapshot => {
+    const unsubscribe = props.firebase.elements().on('value', (snapshot) => {
       // convert messages list from snapshot
       const elementObject = snapshot.val()
       if (elementObject) {
-        const elementsList = Object.keys(elementObject).map(key => ({
+        const elementsList = Object.keys(elementObject).map((key) => ({
           ...elementObject[key],
-          uid: key
+          uid: key,
         }))
         setElements(elementsList)
         setLoading(false)
@@ -42,12 +43,12 @@ function AppBase(props) {
     const newNote = {
       author: entryTitle ? entryTitle : 'iots',
       text: entry,
-      auid: 'iots108-temporary-auid'
+      auid: 'iots108-temporary-auid',
     }
     props.firebase.elements().push(newNote)
   }
 
-  const remover = uid => {
+  const remover = (uid) => {
     props.firebase.element(uid).remove()
   }
 
@@ -67,13 +68,24 @@ function AppBase(props) {
             <ProtectedRoute
               path={ROUTES.HOME}
               user={props.user}
-              component={routeProps => (
+              component={(routeProps) => (
                 <HomePage
                   {...routeProps}
                   elements={elements}
                   loading={loading}
                   saveNote={saveNote}
                   remover={remover}
+                />
+              )}
+            />
+            <ProtectedRoute
+              path={ROUTES.MAINHALL}
+              user={props.user}
+              component={(routeProps) => (
+                <MainHall
+                  {...routeProps}
+                  elements={elements}
+                  loading={loading}
                 />
               )}
             />

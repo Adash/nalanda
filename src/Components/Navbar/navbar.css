@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:500');
 
-li, a, button, h2 {
-  font-family: "Montserrat", sans-serif;
+li,
+a,
+button,
+h2 {
+  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   font-size: 16px;
   color: #edf0f1;
@@ -13,7 +16,7 @@ a {
 
 h2 {
   cursor: pointer;
-  color: #81c6dd; 
+  color: #81c6dd;
 }
 
 .q_navbar {
@@ -22,7 +25,7 @@ h2 {
   min-height: 2rem;
   justify-content: space-between;
   align-items: center;
-  background-color: #24252A; 
+  background-color: #24252a;
   padding: 1px 3px 1px 3px;
 }
 
@@ -40,26 +43,27 @@ h2 {
 }
 
 .nav_links li a:hover {
-  color: #0088a9
+  color: #0088a9;
+  text-decoration: none;
 }
 
 .q_navbar button {
   padding: 4px 15px;
-  background-color: rgba(0,136,169,1);
+  background-color: rgba(0, 136, 169, 1);
   border: none;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease 0s;
+  text-decoration: none;
 }
 
 button:hover {
-  background-color: rgba(0,136,169,0.7);
+  color: white;
+  background-color: rgba(0, 152, 190, 0.7);
 }
-
 
 /* Desktop Styles */
 @media only screen and (min-width: 961px) {
-
   .q_navbar {
     display: flex;
     justify-content: space-between;
@@ -78,6 +82,4 @@ button:hover {
   /* .q_navbar button {
     padding: 9px 25px;
   } */
-
-
 }
