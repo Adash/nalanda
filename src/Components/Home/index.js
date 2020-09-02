@@ -4,7 +4,7 @@ import EntryField from '../EntryField'
 
 import './home.css'
 
-const HomePage = props => {
+const HomePage = (props) => {
   const [entry, setEntry] = useState('')
   const [entryTitle, setEntryTitle] = useState('')
 
@@ -19,9 +19,7 @@ const HomePage = props => {
   return (
     <div className="homepage_container">
       <div className="display_container">
-        <div className="display">
-          <div>Display</div>
-        </div>
+        <div className="display"></div>
         <div className="entryfield_container">
           <EntryField
             entry={entry}

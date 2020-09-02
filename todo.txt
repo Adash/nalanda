@@ -1,2 +1,12 @@
 * consolidate the style of the app so the functional part is in line with the MainHall section
+  ~ try to make the Navbar buttons transparent so they lie on 
+   top of the Header. Keep the header the same height.
+
+   done :)
+    position: absolute;
+    z-index: 111;
+    width: 100%;
+  
+  ~ convert the navbar styling to styled-componets (maybe)
+
 * Add some functionality to the buttons on the MainHall page

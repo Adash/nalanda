@@ -8,13 +8,13 @@ import './navbar.css'
 const Navbar = ({ user }) => {
   return (
     <div className="q_navbar">
-      <h2 id="q_navbar_title"> Navbar </h2>
+      <h2 className="logo"> Nalanda </h2>
       {user ? (
         <>
           <div className="nav_links">
-            <Link to={ROUTES.LANDING}>Land</Link>
-            <Link to={ROUTES.HOME}>Home</Link>
-            <Link to={ROUTES.MAINHALL}>Main</Link>
+            <Link to={ROUTES.LANDING}>Home</Link>
+            <Link to={ROUTES.HOME}>Add</Link>
+            <Link to={ROUTES.MAINHALL}>Read</Link>
           </div>
           <SignOut />
         </>

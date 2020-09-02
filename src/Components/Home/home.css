@@ -14,11 +14,7 @@
 }
 
 .display {
-  background-color: rgb(246, 249, 253);
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 20px;
 }
 
 .entry_container {
