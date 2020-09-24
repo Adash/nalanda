@@ -8,7 +8,7 @@ import './navbar.css'
 const Navbar = ({ user }) => {
   return (
     <div className="q_navbar">
-      <h2 className="logo"> Nalanda </h2>
+      <p className="logo"> Nalanda </p>
       {user ? (
         <>
           <div className="nav_links">

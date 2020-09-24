@@ -13,6 +13,9 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
 }
 
 .main_container {
@@ -20,31 +23,38 @@
 'page' div which lets it stretch with the available space and letting the 
 header and footer flow to the top and the bottom respectively */
   flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow: hidden;
+  width: 100%;
 }
 
 /* Mobile Styles */
 @media only screen and (max-width: 400px) {
   body {
-    background-color: #f09a9d; /* Red */
+    /* background-color: #faf3dd;  */
+    background: linear-gradient(90deg, #68b0ab 0%, #8fc0a9 100%);
   }
 }
 
 /* Tablet Styles */
 @media only screen and (min-width: 401px) and (max-width: 960px) {
   body {
-    background-color: #f5cf8e; /* Yellow */
+    background-color: #b68e49; /* Yellow */
+  }
+  .page {
+    /* width: 1000px; */
   }
 }
 
 /* Desktop Styles */
 @media only screen and (min-width: 961px) {
   body {
-    background-color: #eaedf0;
+    background-color: #313f38;
   }
   .app-container {
     max-height: 100vh;
+  }
+
+  .main_container {
+    padding-top: 40px;
   }
 }

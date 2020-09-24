@@ -1,6 +1,39 @@
 import React, { useState } from 'react'
+import styled from 'styled-components'
 
-import './quoteElement.css'
+const QuoteListArea = styled.div`
+  height: 85vh;
+  overflow: auto;
+  flex: 1 1 auto;
+  width: 100%;
+  padding: 5%;
+  background: linear-gradient(180deg, #eaeee5 100%, #faf3dd 100%);
+
+  @media only screen and (min-width: 961px) {
+    height: 100%;
+  }
+`
+
+const ButtonRemove = styled.button`
+  background-color: rgb(156, 8, 8);
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 6px 9px 6px 9px;
+
+  :hover {
+    background-color: rgb(100, 8, 8);
+  }
+
+  @media only screen and (min-width: 961px) {
+    cursor: pointer;
+  }
+`
+
+const QuoteText = styled.p`
+  text-align: left;
+`
 
 const Quote = ({ element, remover }) => {
   const [showButtons, setShowButtons] = useState('none')
@@ -10,14 +43,13 @@ const Quote = ({ element, remover }) => {
   return (
     <div onClick={() => toggleButtons()}>
       <h4>{element.author}</h4>
-      <p className="quote">{element.text}</p>
-      <button
+      <QuoteText>{element.text}</QuoteText>
+      <ButtonRemove
         style={{ display: showButtons }}
-        className="remove-button"
         onClick={() => remover(element.uid)}
       >
         remove
-      </button>
+      </ButtonRemove>
     </div>
   )
 }
@@ -30,9 +62,9 @@ const QuotesList = ({ elements, remover }) => {
     </div>
   )
   return (
-    <div className="quote-list-area">
+    <QuoteListArea>
       {elements.map((element, index) => renderQuotes(element, index, remover))}
-    </div>
+    </QuoteListArea>
   )
 }
 export default QuotesList

@@ -14,7 +14,7 @@ const StyledApp = styled.div`
 const StyledNavbar = styled.header`
   z-index: 100;
   width: 100vw;
-  flex: 0 0 13vh;
+  flex: 0 0 12vh;
   background: linear-gradient(90deg, #68b0ab 0%, #8fc0a9 100%);
   display: flex;
   flex-direction: column;
@@ -175,11 +175,11 @@ const FilterOption = ({ type, selection }) => (
 
 const Navbar = () => (
   <StyledNavbar>
-    <FlatButtonsWrapper>
+    {/* <FlatButtonsWrapper>
       <StyledFilterLabel>version: 0.01</StyledFilterLabel>
       <StyledFilterLabel>FilterBy</StyledFilterLabel>
       <StyledClearLabel>Clear all</StyledClearLabel>
-    </FlatButtonsWrapper>
+    </FlatButtonsWrapper> */}
     <FilterOptionContainer>
       <FilterOption type="Quote type" selection="All" />
       <FilterOption type="School" selection="Vajrayana" />
@@ -224,20 +224,5 @@ function MainHall({ elements }) {
     </StyledApp>
   )
 }
-
-// const StyledTest = styled.div`
-//   height: 1800px;
-//   width: 100vw;
-//   background: linear-gradient(180deg, #eaeee5 100%, #faf3dd 100%);
-//   padding-top: env(safe-area-inset-top);
-// `;
-
-// const NotchTest = () => (
-//   <StyledTest>
-//     <div>
-//       <span style={{ fontSize: '18px', color: 'pink' }}>NotchTestScreen</span>
-//     </div>
-//   </StyledTest>
-// );
 
 export default MainHall

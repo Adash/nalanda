@@ -7,7 +7,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 
 import Navbar from '../Navbar'
-import Footer from '../Footer'
 import LandingPage from '../Landing'
 import HomePage from '../Home'
 import Pod from '../Pod'
@@ -91,7 +90,6 @@ function AppBase(props) {
             />
             <Route path={ROUTES.SIGNIN} component={SignIn} />
           </div>
-          <Footer />
         </div>
       </Router>
     </div>
