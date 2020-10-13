@@ -1,11 +1,18 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import SignOut from '../SignOut'
 import * as ROUTES from '../../Constants/routes'
 import { withAuthentication } from '../Session'
 import './navbar.css'
+import SignInButton from '../Buttons/SignInOutButton'
 
 const Navbar = ({ user }) => {
+  const history = useHistory()
+
+  const signIn = () => {
+    history.push(ROUTES.SIGNIN)
+  }
+
   return (
     <div className="q_navbar">
       <p className="logo"> Nalanda </p>
@@ -19,9 +26,10 @@ const Navbar = ({ user }) => {
           <SignOut />
         </>
       ) : (
-        <button className="lnk">
-          <Link to={ROUTES.SIGNIN}>Sign In</Link>
-        </button>
+        // <button className="lnk">
+        //   <Link to={ROUTES.SIGNIN}>Sign In</Link>
+        // </button>
+        <SignInButton onClick={signIn}>Sign In</SignInButton>
       )}
     </div>
   )
