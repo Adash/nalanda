@@ -35,44 +35,11 @@ const ContentScrollContainer = styled.div`
   overflow-y: scroll;
 `
 
-const FlatButtonsWrapper = styled.div`
-  height: 15px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-`
-
-const StyledFilterLabel = styled.span`
-  position: relative;
-  width: 74px;
-  height: 13px;
-  font-family: Arimo;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 9px;
-  line-height: 10px;
-  text-align: center;
-  color: #dfe9dd;
-`
-
-const StyledClearLabel = styled.span`
-  position: relative;
-  width: 74px;
-  height: 13px;
-  font-family: Arimo;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 9px;
-  line-height: 10px;
-  text-align: center;
-  color: #dfe9dd;
-`
-
 const FilterOptionContainer = styled.div`
   position: relative;
   height: 40px;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 4px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -118,7 +85,7 @@ const StyledFilterSelection = styled.span`
 
 const StyledCard = styled.div`
   max-width: 350px;
-  max-height: 254px;
+  /* max-height: 254px; */
   background: linear-gradient(180deg, #ffffff 0%, #fcf9ed 100%);
   box-shadow: 3px 6px 4px 1px rgba(0, 0, 0, 0.25);
   border-radius: 7px;
@@ -175,11 +142,6 @@ const FilterOption = ({ type, selection }) => (
 
 const Navbar = () => (
   <StyledNavbar>
-    {/* <FlatButtonsWrapper>
-      <StyledFilterLabel>version: 0.01</StyledFilterLabel>
-      <StyledFilterLabel>FilterBy</StyledFilterLabel>
-      <StyledClearLabel>Clear all</StyledClearLabel>
-    </FlatButtonsWrapper> */}
     <FilterOptionContainer>
       <FilterOption type="Quote type" selection="All" />
       <FilterOption type="School" selection="Vajrayana" />

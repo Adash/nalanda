@@ -26,9 +26,6 @@ const Navbar = ({ user }) => {
           <SignOut />
         </>
       ) : (
-        // <button className="lnk">
-        //   <Link to={ROUTES.SIGNIN}>Sign In</Link>
-        // </button>
         <SignInButton onClick={signIn}>Sign In</SignInButton>
       )}
     </div>

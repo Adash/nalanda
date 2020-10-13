@@ -50,21 +50,6 @@ h2 {
   text-decoration: none;
 }
 
-.q_navbar button {
-  padding: 4px 15px;
-  background-color: rgba(0, 136, 169, 1);
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
-  text-decoration: none;
-}
-
-button:hover {
-  color: white;
-  background-color: rgba(0, 152, 190, 0.7);
-}
-
 .logo {
   color: #faf3dd;
   font-size: 20px;
